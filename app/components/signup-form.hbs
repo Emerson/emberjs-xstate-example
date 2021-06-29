@@ -1,0 +1,40 @@
+{{#if (or (eq this.state 'idle') (eq this.state 'saving'))}}
+
+  <form {{on 'submit' this.submit}} class="signup-form" autocomplete="off">
+
+    <div class="field">
+      <label for="username">Username</label>
+      <Input @id="username" @type="text" @value={{this.username}} />
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <Input @id="password" @type="password" @value={{this.password}} />
+    </div>
+
+    {{#if (eq this.state 'idle')}}
+      <input type="submit" value="Create User" />
+    {{/if}}
+
+    {{#if (eq this.state 'saving')}}
+      <input type="submit" value="Saving..." disabled />
+    {{/if}}
+
+  </form>
+
+{{/if}}
+
+{{#if (eq this.state 'success')}}
+  <div class="success">
+    <p>⭐️ User created!</p>
+  </div>
+{{/if}}
+
+{{#if (eq this.state 'error')}}
+  <div class="error">
+    <p>🚫 There was an error submitting the form</p>
+    <button {{on 'click' (fn this.send 'RETRY')}}>
+      Try Again...
+    </button>
+  </div>
+{{/if}}

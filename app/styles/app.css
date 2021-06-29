@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  place-items: center center
+}
+
+.signup-form {
+  width: 600px;
+}
+
+.signup-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signup-form .field {
+  margin-bottom: 12px;
+}
+
+.signup-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.error p {
+  font-size: 22px;
+  color: crimson;
+  font-weight: bold;
+}
+
+.error button {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.success p {
+  font-size: 22px;
+  color: green;
+  font-weight: bold;
+}
